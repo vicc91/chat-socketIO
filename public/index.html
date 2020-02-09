@@ -5,36 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat Socket.IO</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="chat-info">
-    <p class="users-online"></p>
-    <p class="user-joined"></p>
-    <p class="user-typing"></p>
-    <p class="user-disconnect"></p>
+  <div class="chat-login">
+    <div class="login-content">
+      <h3 class="login-title">Nickname</h3>
+      <input class="login-input" type="text" placeholder="type here..." maxlength="14">
+      <button class="login-btn">Save</button>
+    </div>
   </div>
+ 
+  <div class="chat-messages">
+    <p class="user-typing hidden"></p>
+    <div class="messages-content">
+      <h3 class="messages-title">CHAT</h3>
+      <div class="messages"></div>
+      <input type="text" class="messages-input" placeholder="type the message here">
+      <button class="messages-btn">Send</button>
+      <button class="exit-btn">Exit</button>
 
-  <div class="login">
-    <h3 class="login-title">Login</h3>
-    <input class="login-input" type="text" placeholder="nickname" maxlength="14">
-    <button class="login-btn">Save</button>
+      <div class="chat-info">
+        <p class="users-online"></p>
+        <p class="user-joined"></p>
+        <p class="user-disconnect"></p>
+      </div>
+    </div>
   </div>
-
-  <div class="chat-messages none"> 
-    <h3 class="messages-title">Messages</h3>
-    <div class="messages"></div>
-    <input type="text" class="messages-input" placeholder="type here">
-    <button class="messages-btn">Send</button>
-  </div>
-
-  <div class="chat-exit">
-    <button class="exit-btn">Exit</button>
-  </div>
-
-  <script src="socket.io/socket.io.js"></script>
-  <script src="chat.js"></script>
-
   <script src="socket.io/socket.io.js"></script>
   <script src="app.js"></script>
 </body>

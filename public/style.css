@@ -1,6 +1,182 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+.chat-login {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(235, 146, 74);
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .4s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.login-content {
+  width: 600px;
+}
+.login-title {
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin: 0 0 1.2rem;
+}
+.login-input,
+.login-btn,
+.messages-input,
+.messages-btn,
+.exit-btn {
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+.login-btn {
+  background-color: rgb(59, 130, 206);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.login-input {
+  background-color: rgb(235, 146, 74);
+  border: 2px solid #FFFFFF;
+  padding-left: 1.5rem;
+  color: #FFFFFF;
+}
+.login-input:focus {
+  outline: none;
+}
+.login-input::placeholder {
+  color: #FFFFFF;
+}
+.chat-messages {
+  background-color: rgb(255, 236, 202);
+  min-height: 100vh;
+  padding-top: 1rem;
+}
+.messages-content {
+  max-width: 800px;
+  width: 70%;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 2rem 3rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19),
+    0 6px 6px rgba(0,0,0,0.23);
+  border-radius: .5rem;
+}
+.messages-title {
+  margin-top: 0;
+  color: rgb(235, 146, 74);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.messages {
+  height: 300px;
+  border: 2px solid rgb(252, 195, 148);
+  overflow-y: auto;
+  border-radius: .5rem;
+}
+.messages-input {
+  border: 2px solid rgb(252, 195, 148);
+  margin-top: 1rem;
+  padding-left: 1rem;
+  color: rgb(235, 146, 74);;
+}
+.messages-input::placeholder {
+  color: rgb(235, 146, 74);
+}
+.messages-input:focus {
+  outline: none;
+}
+.messages-btn,
+.exit-btn {
+  background-color: rgb(235, 146, 74);
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  margin-bottom: .5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.exit-btn {
+  background-color: rgb(247, 94, 94);
+}
+.user-typing {
+  height: 3rem;
+  margin: 1rem auto;
+  line-height: 3rem;
+  text-align: center;
+  display: table;
+  background-color: rgb(90, 163, 241);
+  border-radius: .5rem;
+  color: #FFFFFF;
+  padding: 0 1rem;
+}
+.users-online, 
+.user-joined,
+.user-disconnect {
+  margin: .3rem 0;
+  color: #888;
+}
+.chat-info {
+  margin-top: 1rem;
+  border-top: 1px solid #CCC;
+}
+.messages {
+  padding: .8rem 1.5rem 0;
+  color: #888;
+  font-size: 1.3rem;
+}
+.messages p {
+  margin-top: 0;
+  margin-bottom: .4rem;
+}
+.messages span {
+  color: rgb(90, 163, 241);
+}
+/* responsive desing*/
+@media screen and (max-width: 690px) {
+  .login-content {
+    width: 400px;
+  }
+  .messages-content {
+    width: 90%;
+  }
+  .messages {
+    height: 220px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login-content {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .login-title {
+    font-size: 2.5rem;
+  }
+  .messages-content {
+    width: 95%;
+  }
+}
 /* helpers */
-.none {
-  display: none;
+.left-animation {
+  transform: translateX(-100%);
 }
 .hidden {
   visibility: hidden;

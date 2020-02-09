@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Start server
-const server = app.listen(app.get('port'), 
+const server = app.listen(app.get('port'),
   () => console.log(`Server running at port ${app.get('port')}`));
   
 // Socket.IO
@@ -58,7 +58,7 @@ io.on('connection', (socket) => {
     if (addedUser) {
       --numUsers;
     }
-    io.sockets.emit('chat:disconnect', {
+    socket.broadcast.emit('chat:disconnect', {
       username: socket.username,
       numUsers,
     });

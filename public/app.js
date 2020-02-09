@@ -1,7 +1,7 @@
 const socket = io();
 
 // DOM elements
-const login = document.querySelector('.login');
+const login = document.querySelector('.chat-login');
 const inputNickname = document.querySelector('.login-input');
 const loginBtn = document.querySelector('.login-btn');
 const usersOnline = document.querySelector('.users-online');
@@ -23,7 +23,7 @@ loginBtn.addEventListener('click', () => {
   if (!nickname || nickname.lenght === 0) return;
   
   socket.emit('chat:addUser', nickname);
-  login.classList.add('none');
+  login.classList.add('left-animation');
   inputNickname.value = '';
   messagesChat.classList.remove('none');
 });
@@ -57,6 +57,7 @@ messagesInput.addEventListener('keypress', () => {
 
 exitBtn.addEventListener('click', () => {
   socket.emit('chat:disconnect');
+  login.classList.remove('left-animation');
 });
 
 socket.on('chat:login', (numUsers) => {
@@ -69,22 +70,23 @@ socket.on('chat:userJoined', (data) => {
 
 socket.on('chat:message', (data) => {
   messages.innerHTML += `
-    <p>${data.username}: ${data.message}</p>
+    <p><span>${data.username}:</span> ${data.message}</p>
   `;
 });
 
 socket.on('chat:typing', (data) => {
   if(!userTyping.innerHTML) {
+    userTyping.classList.remove('hidden');
     userTyping.textContent = `${data.username} is typing...`;
   }
 });
 
 socket.on('chat:stopTyping', () => {
   userTyping.innerHTML = '';
+  userTyping.classList.add('hidden');
 });
 
 socket.on('chat:disconnect', (data) => {
   usersOnline.textContent = `users online: ${data.numUsers}`;
-  messagesChat.classList.add('none');
-  login.classList.remove('none');
+  userDisconnect.textContent = `${data.username} disconnected`;
 });
