@@ -1,0 +1,26 @@
+{
+  "name": "chat-socket.io",
+  "version": "0.0.1",
+  "description": "chat build with socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vicc91/chat-socket.io.git"
+  },
+  "author": "vicc91",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vicc91/chat-socket.io/issues"
+  },
+  "homepage": "https://github.com/vicc91/chat-socket.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
