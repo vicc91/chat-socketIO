@@ -8,7 +8,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="chat-info">
+    <p class="users-online"></p>
+    <p class="user-joined"></p>
+    <p class="user-typing"></p>
+    <p class="user-disconnect"></p>
+  </div>
+
+  <div class="login">
+    <h3 class="login-title">Login</h3>
+    <input class="login-input" type="text" placeholder="nickname" maxlength="14">
+    <button class="login-btn">Save</button>
+  </div>
+
+  <div class="chat-messages none"> 
+    <h3 class="messages-title">Messages</h3>
+    <div class="messages"></div>
+    <input type="text" class="messages-input" placeholder="type here">
+    <button class="messages-btn">Send</button>
+  </div>
+
+  <div class="chat-exit">
+    <button class="exit-btn">Exit</button>
+  </div>
+
+  <script src="socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+
   <script src="socket.io/socket.io.js"></script>
   <script src="app.js"></script>
 </body>

@@ -1,0 +1,7 @@
+/* helpers */
+.none {
+  display: none;
+}
+.hidden {
+  visibility: hidden;
+}
